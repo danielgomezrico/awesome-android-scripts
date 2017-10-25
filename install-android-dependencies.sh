@@ -18,7 +18,7 @@ spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses;
 for I in "platforms;android-25" \
          "platforms;android-23" \
          "platforms;android-21" \
-         "buildDate-tools;25.0.6" \
+         "build-tools;25.0.6" \
          "extras;google;m2repository" \
          "extras;android;m2repository" \
          "extras;google;google_play_services"; do
