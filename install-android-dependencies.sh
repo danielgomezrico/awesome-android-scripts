@@ -15,15 +15,26 @@ spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses;
   }
 '
 
-for I in "platforms;android-25" \
+echo "--------------------------------------------------------"
+echo "Trying to update dependencies with tools/bin/sdkmanager: "
+echo "--------------------------------------------------------"
+
+for I in "platforms;android-26" \
+         "platforms;android-25" \
          "platforms;android-23" \
          "platforms;android-21" \
-         "build-tools;25.0.6" \
+         "build-tools;26.0.1" \
+         "tools" \
+         "platform-tools" \
          "extras;google;m2repository" \
          "extras;android;m2repository" \
-         "extras;google;google_play_services"; do
-    echo "Trying to update with tools/bin/sdkmanager: " $I
+         "extras;google;google_play_services" \
+         "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"\
+         "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"; do
+    echo "-> " $I
     sdkmanager $I
 done
 
 sdkmanager --update
+
+echo "--------------------------------------------------------"
